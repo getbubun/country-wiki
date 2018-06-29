@@ -1,0 +1,117 @@
+<spinner [backgroundColor]="'#100089'" [spinner]="spinkit.skRotatingPlane"></spinner>
+<div class="main">
+
+  <div class="outer d-flex justify-content-center align-items-center cover" id="container">
+    <img src="{{ countryFlag }}" class="img-responsive">
+  </div>
+  <div class="heading text-center d-flex align-items-center justify-content-center">
+    <div>{{countryDetails.name}}</div>
+  </div>
+
+  <div class="details-area basic">
+    <div class="title">Basic Details</div>
+    <div class="row">
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.capital">
+        <div class="header">Capital</div>
+        <div class="content">{{ countryDetails.capital }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.demonym">
+        <div class="header">Demonym</div>
+        <div class="content">{{ countryDetails.demonym }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.region">
+        <div class="header">Region</div>
+        <div class="content">
+          <a class="btn-link" [routerLink]="['/allCountry', 'region', countryDetails.region , 'all']">{{countryDetails.region}}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.subregion">
+        <div class="header">Subregion</div>
+        <div class="content">{{ countryDetails.subregion }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.nativeName">
+        <div class="header">Native Name</div>
+        <div class="content">{{ countryDetails.nativeName }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.callingCodes">
+        <div class="header">Calling Codes</div>
+        <div class="content">{{ countryDetails.callingCodes }}</div>
+      </div>
+
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.topLevelDomain">
+        <div class="header">Domain Name</div>
+        <div class="content">{{ countryDetails.topLevelDomain }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.altSpellings !=''">
+        <div class="header">Alternate Names</div>
+        <span class="content" *ngFor="let call of countryDetails.altSpellings;let last=last;">{{call }}{{(last) ? " ":", "}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-area geographic text-white">
+    <div class="title">Geographic Details</div>
+    <div class="row">
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.population">
+        <div class="header">Population</div>
+        <div class="content">{{ countryDetails.population | number }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.area">
+        <div class="header">Area</div>
+        <div class="content">{{ countryDetails.area }} sq. km.</div>
+      </div>
+
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.latlng ">
+        <div class="header">Cordinates</div>
+        <div class="content">{{ countryDetails.latlng }}
+        </div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.timezones ">
+        <div class="header">Timezones</div>
+        <span class="content" *ngFor="let timezone of countryDetails.timezones;let last=last;">{{timezone }}{{(last) ? " ":", "}}</span>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.borders !=''">
+        <div class="header">Borders</div>
+        <span class="content" *ngFor="let border of countryDetails.borders;let last=last;">
+          <a class="btn-link" [routerLink]="['/country', border]">{{border}}{{(last) ? " ":", "}}</a>
+        </span>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.regionalBlocs != ''">
+        <div class="header">Regional Blocks</div>
+        <span class="content" *ngFor="let block of countryDetails.regionalBlocs;let last=last;">
+          {{block.acronym}} - ({{block.name}}) {{(last) ? " ":", "}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-area national">
+    <div class="title">National Details</div>
+    <div class="row">
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.currencies">
+        <div class="header">Currency</div>
+        <span class="content" *ngFor="let currency of countryDetails.currencies;let last=last;">
+          <a class="btn-link" [routerLink]="['/allCountry', 'currency', currency.code, currency.name]">{{currency.name}} ({{currency.symbol}}) {{currency.code }} {{(last) ? " ":", "}}</a>
+        </span>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.languages">
+        <div class="header">Languages</div>
+        <span class="content" *ngFor="let language of countryDetails.languages;let last=last;">
+          <a class="btn-link" [routerLink]="['/allCountry', 'lang', language.iso639_1, language.name]">{{language.name}} ({{language.nativeName}}) {{(last) ? " ":", "}}</a>
+        </span>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.alpha3Code">
+        <div class="header">Country Code</div>
+        <div class="content">{{ countryDetails.alpha3Code }}</div>
+      </div>
+      <div class="col-12 col-md-6 item" *ngIf="countryDetails.gini ">
+        <div class="header">Gini Index</div>
+        <div class="content">{{ countryDetails.gini }}</div>
+      </div>
+    </div>
+
+    <div class="text-center" id="button">
+      <button type="button " class="btn btn-primary" (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+</div>

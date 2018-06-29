@@ -1,0 +1,70 @@
+<spinner [backgroundColor]="'#100089'"[spinner]="spinkit.skRotatingPlane" ></spinner>
+
+<div class="d-flex flex-column">
+  <header class="d-flex flex-column" *ngIf='region'>
+    <img class="" src="assets/images/{{region}}.jpeg" alt={{region}}>
+    <div class="title d-flex align-items-center justify-content-center">
+      <div class="text-center">{{region}}</div>
+    </div>
+
+  </header>
+
+  <div class="container-fluid pt-3 list-container">
+    <div class="row">
+      <div class=" col-sm-6 col-md-4" *ngFor="let country of regionalCountries | paginate: { itemsPerPage: 9, currentPage: p }">
+        <a [routerLink]="['/country', country.alpha3Code]">
+          <div class="card mx-auto" style="width: 18rem;">
+            <img class="card-img-top img-fluid" style="height:25vh; width:100%" src="{{country.flag}}" alt="{{country.name}}">
+            <div class="card-body">
+              <h5 class="card-title text-center" [innerHtml]="country.name | uppercase"></h5>
+              <div class="card-text">
+                <div class="head" *ngIf=" country.capital">
+                  <div class="heading">Capital :
+                    <span *ngIf="country.capital"> {{country.capital}}</span>
+                  </div>
+
+                </div>
+                <div class="head">
+                  <div class="heading">Timezone{{ country.timezones.length > 1 ? 's : ' : ' : ' }}
+                    <span> {{ country.timezones.join(', ') }}</span>
+                  </div>
+
+                </div>
+                <div class="head" *ngIf=" country.population">
+                  <div class="heading">Population :
+                    <span *ngIf="country.population"> {{country.population}}</span>
+                  </div>
+
+                </div>
+                <div class="head">
+                  <div class="heading">Language{{ country.languages.length > 1 ? 's : ' : ' : ' }}
+                    <span id="link" *ngFor="let language of country.languages;let last=last;">
+                      <a class="btn-link" [routerLink]="['/allCountry', 'lang', language.iso639_1 , language.name]">{{language.name}} ({{language.nativeName}}) {{(last) ? " ":", "}}</a>
+                    </span>
+                  </div>
+
+                </div>
+                <div class="head">
+                  <div class="heading">Currenc{{ country.currencies.length > 1 ? 'ies : ' : 'y : ' }}
+                    <span id="link" *ngFor="let currency of country.currencies;let last=last;">
+                      <a class="btn-link" *ngIf="currency.code" [routerLink]="['/allCountry', 'currency', currency.code , currency.name]">{{currency.name}} ({{currency.symbol}}) {{currency.code }} {{(last) ? " ":", "}}</a>
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center ">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+  <div class="text-center" id="button">
+      <button type="button " class="btn btn-primary" (click)="goBack()">Go Back</button>
+    </div>

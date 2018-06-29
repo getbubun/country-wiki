@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto|Pacifico');
+
+header {
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+header .title {
+    font-family: 'Pacifico' , cursive;
+    font-weight: 400;
+    font-size: 3.5em;
+    color: white;
+    letter-spacing: 0.2rem;
+    height: 350px;
+    flex: 1;
+    line-height: 1.5;
+}
+.card{
+    margin: 8%;
+    border-radius: 5px;
+    -webkit-transition: 0.3s ease-in-out, 
+    -webkit-transform 0.3s ease-in-out;
+	-moz-transition:  0.3s ease-in-out, 
+    -moz-transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, 
+    transform 0.3s ease-in-out, ;
+    
+}
+
+.card-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.15em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin: 1rem 0 1.5rem;
+    color: hsl(0, 0%, 13%);
+}
+
+.card:hover {
+	transform: scale(1.03); 
+}
+.card img {
+    height: 12rem;
+    object-fit: cover;
+}
+
+.card .card-body {
+    padding: 1rem 2rem;
+
+}
+ span {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+    color: hsl(0, 0%, 13%);
+}
+
+ .heading {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    margin-bottom: 0;
+    color: hsl(0, 0%, 25%);
+}
+
+a:link{
+    text-decoration: none;
+    text-rendering: optimizeSpeed;
+    color: rgb(41, 47, 56);
+  }
+
+#link{
+    text-decoration: underline !important;
+    color: hsl(231, 78%, 58%) !important ;
+}
+
+button{
+    border-radius: 35px;
+    background-image: linear-gradient(to right, #6427FF 0%, #272DA9 100%);
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+div #button{
+    border-radius: 15px;
+    padding-bottom: 6%;
+    margin-top: 6%
+}
+pagination-controls /deep/  li{
+    border-radius: 15px;
+    background-image: linear-gradient(to right, #6427FF 0%, #272DA9 100%);
+}
+
+pagination-controls /deep/  li :hover{
+    background-image: linear-gradient(to right, #6427FF 0%, #272DA9 100%);
+    border-radius: 15px;
+}
+
+pagination-controls /deep/  a
+{
+    text-decoration: none;
+}
+
