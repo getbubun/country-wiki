@@ -4,6 +4,9 @@
     font-family: 'Pacifico', cursive;
     margin-top: 5rem;
 }
+.container{
+    margin-bottom: 10%
+}
 .col-md-4{
 	margin: 0 auto;
     padding: 2% 4%;
