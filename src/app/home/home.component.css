@@ -1,51 +1,49 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 
- h5{
-    font-family: 'Pacifico', cursive;
-    margin-top: 5rem;
+h5 {
+  font-family: "Pacifico", cursive;
+  margin-top: 5rem;
 }
-.container{
-    margin-bottom: 10%;
-    
+
+.col-md-4 {
+  margin: 0 auto;
+  padding: 2% 4%;
+  list-style: none;
+  display: block;
+  text-align: center;
 }
-.col-md-4{
-	margin: 0 auto;
-    padding: 2% 4%;
-    list-style: none;
-	display: block;
-	text-align: center;
+.card {
+  margin-top: 15%;
+  border-color: white;
+  -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
-.card{
-    margin-top: 15%;
-    border-color: white;
-    -webkit-transition: 0.3s ease-in-out, 
-    -webkit-transform 0.3s ease-in-out;
-	-moz-transition:  0.3s ease-in-out, 
-    -moz-transform 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out, 
-    transform 0.3s ease-in-out, ;
-}
-.card-img-top{
-    border-radius: 15px; 
-    background: linear-gradient( rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.10)), /* bottom, image */
+.card-img-top {
+  border-radius: 15px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.1)
+  ); /* bottom, image */
 }
 
 .card:hover {
-	transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
-.card-img-overlay{
-    position: absolute;
-	width: inherit;
-	height: inherit;
+.card-img-overlay {
+  position: absolute;
+  width: inherit;
+  height: inherit;
 }
 
 .card-img-overlay h3 {
-	font-family: 'Pacifico', cursive;
-	font-weight: 400;
-	color: #fff;
-	font-size: 3em;
-	margin: 0 20px;
-	padding: 80px 0 0 0;
-	line-height: 1.5;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: #fff;
+  font-size: 3em;
+  margin: 0 20px;
+  padding: 80px 0 0 0;
+  line-height: 1.5;
 }

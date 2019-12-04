@@ -1,6 +1,14 @@
 <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light">
-  <a class="navbar-brand mx-auto" href="#">Countries Wiki</a>
+  <a class="navbar-brand mx-auto" [routerLink]="['/home']">Countries Wiki</a>
 </nav>
 
-
 <router-outlet></router-outlet>
+
+<footer id="sticky-footer" class=" text-white">
+  <div class="container text-center">
+    <small
+      >Made with ❤️ by
+      <a href="https://github.com/getbubun" target="_blank">Manab Das</a></small
+    >
+  </div>
+</footer>

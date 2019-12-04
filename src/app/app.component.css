@@ -1,5 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-a{
-    font-family: 'Pacifico', cursive;
-    font-size: 1.8em;
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+a {
+  font-family: "Pacifico", cursive;
+  font-size: 1.8em;
+}
+
+nav {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#sticky-footer {
+  margin-top: 40px;
+  padding: 10px 0px;
+  flex-shrink: none;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#sticky-footer a {
+  text-decoration: none;
+  color: bisque;
+  font-size: 20px;
 }

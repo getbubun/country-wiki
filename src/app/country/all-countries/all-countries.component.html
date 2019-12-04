@@ -1,4 +1,13 @@
-<spinner [backgroundColor]="'#100089'"[spinner]="spinkit.skRotatingPlane" ></spinner>
+<ngx-spinner
+bdOpacity = 0.9
+bdColor = "#ffffff"
+size = "medium"
+color = "#1e00ff"
+type = "ball-clip-rotate"
+[fullScreen] = "true"
+>
+
+</ngx-spinner>
 
 <div class="d-flex flex-column">
   <header class="d-flex flex-column" *ngIf='region'>
@@ -62,9 +71,11 @@
   </div>
 
   <div class="text-center ">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
   </div>
 
   <div class="text-center" id="button">
-      <button type="button " class="btn btn-primary" (click)="goBack()">Go Back</button>
+      <button type="button " class="btn btn-primary" (click)="goBack()">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Go Back</button>
     </div>
